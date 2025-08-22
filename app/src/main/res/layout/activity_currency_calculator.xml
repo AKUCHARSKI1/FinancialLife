@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    tools:context=".CurrencyCalculatorActivity">
+
+
+    <View
+        android:id="@+id/light_background_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#C3D7FF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <View
+        android:id="@+id/background_view"
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:background="#7CA3FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/background_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arc_2" />
+
+    <TextView
+        android:id="@+id/username_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:text="Anastazja"
+        android:textColor="#474747"
+        android:textSize="48sp"
+        app:layout_constraintStart_toEndOf="@+id/photo_frame_image_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/photo_frame_image_view"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/no_photo_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/background_view"
+        app:shapeAppearanceOverlay="@style/Circular"
+        app:strokeColor="#474747"
+        app:strokeWidth="4dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            app:backgroundTint="#C3D7FF"
+            app:fabCradleMargin="8dp"
+
+            app:fabCradleRoundedCornerRadius="40dp"
+            app:fabCradleVerticalOffset="7dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/history_image_view"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/history_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/target_image_view"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/target_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/home_image_view"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/home_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/coop_image_view"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/coop_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/calculator_image_view"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/calculator_icon" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/home_floating_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            android:src="@drawable/home_icon"
+            app:backgroundTint="#7CA3FF"
+            app:layout_anchor="@id/app_bar"
+            app:maxImageSize="40dp">
+
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <ImageButton
+        android:id="@+id/help_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="164dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/custom_upload_photo_bg"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="@+id/background_image_view"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/question_mark" />
+
+    <View
+        android:id="@+id/background_under_buttons_view"
+        android:layout_width="300dp"
+        android:layout_height="260dp"
+        android:background="@drawable/custom_under_buttons_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+        app:layout_constraintEnd_toEndOf="@+id/light_background_view"
+        app:layout_constraintStart_toStartOf="@+id/light_background_view"
+        app:layout_constraintTop_toBottomOf="@+id/background_view"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+            app:layout_constraintEnd_toEndOf="@+id/light_background_view"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/background_view"
+            app:layout_constraintVertical_bias="0.421"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/first_money"
+                android:layout_width="170dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/custom_pin_edit_text_bg"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_currency_first"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/background_view"
+                tools:layout_editor_absoluteY="266dp" />
+
+            <Spinner
+                android:id="@+id/spinner_currency_first"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/spinner_bg"
+                android:dropDownVerticalOffset="110dp"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:popupBackground="@drawable/spinner_popup"
+                app:layout_constraintBottom_toBottomOf="@+id/first_money"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/first_money"
+                app:layout_constraintTop_toTopOf="@+id/first_money"
+                tools:layout_editor_absoluteY="266dp" />
+
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/help_swap"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/custom_upload_photo_bg"
+            android:onClick="swapCurrency"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintEnd_toEndOf="@+id/background_image_view"
+            app:layout_constraintHorizontal_bias="0.803"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/swap_sign" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+            app:layout_constraintEnd_toEndOf="@+id/light_background_view"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/background_view"
+            app:layout_constraintVertical_bias="0.691"
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                android:id="@+id/second_money"
+                android:layout_width="170dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/custom_pin_edit_text_bg"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.44"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinner_currency_second"
+                android:layout_width="90dp"
+                android:layout_height="60dp"
+                android:background="@drawable/spinner_bg"
+                android:dropDownVerticalOffset="110dp"
+                android:gravity="center"
+                android:popupBackground="@drawable/spinner_popup"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+                app:layout_constraintEnd_toEndOf="@+id/light_background_view"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/background_view"
+                app:layout_constraintVertical_bias="0.677" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Podaj kwotę"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

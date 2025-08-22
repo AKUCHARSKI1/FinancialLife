@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="#CCE5FF">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/saldo_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Saldo: "
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/saldo_text_view"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Podaj kwotę którą chcesz dodać"
+                android:textSize="20dp"/>
+
+            <EditText
+                android:id="@+id/target_amount_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/text_view"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp"
+                android:height="20dp"
+                android:background="@drawable/custom_pin_edit_text_bg"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:maxLength="10"
+                android:padding="10dp"
+                android:textSize="24dp"
+                app:layout_constraintHorizontal_bias="0.1"/>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/target_amount_edit_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_delete_button_bg"
+                    android:onClick="clickDeletePinButton"
+                    android:scaleType="center"
+                    android:textColor="#474747"
+                    android:text="Anuluj"
+                    android:textSize="20sp"
+                    app:backgroundTint="#FD0000" />
+
+                <Button
+                    android:id="@+id/set_aside_an_amount_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_confirm_button_bg"
+                    android:onClick="archiveTarget"
+                    android:text="Zatwierdź"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#474747"
+                    android:textSize="20sp"
+                    app:backgroundTint="#94E13A" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:cardBackgroundColor="#CCE5FF">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/settings_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:text="Ustawienia wykresu "
+                android:textSize="24dp"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/settings_text_view"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:background="#474747" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_below="@+id/view"
+                android:layout_alignStart="@+id/settings_text_view"
+                android:layout_alignLeft="@+id/settings_text_view"
+                android:layout_alignEnd="@+id/settings_text_view"
+                android:layout_alignRight="@+id/settings_text_view"
+                android:layout_marginStart="-65dp"
+                android:layout_marginLeft="-65dp"
+                android:layout_marginEnd="-80dp"
+                android:layout_marginRight="-80dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/balance_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:checked="true"
+                    android:gravity="center_horizontal"
+                    android:text="Saldo"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/outcome_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="115dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_horizontal"
+                    android:text="Wydatki"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/income_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="110dp"
+                    android:layout_height="60dp"
+                    android:gravity="center_horizontal"
+                    android:text="Dochody"
+                    android:textAlignment="center"
+                    android:textSize="20dp" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/chip_group"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="5dp"
+                android:background="#474747" />
+            <TextView
+                android:id="@+id/interval_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chip_group"
+                android:layout_alignStart="@+id/chip_group"
+                android:layout_alignLeft="@+id/chip_group"
+                android:layout_marginTop="10dp"
+                android:text="Przedział czasowy:"
+                android:textColor="#474747" />
+
+            <TextView
+                android:id="@+id/category_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chip_group"
+                android:layout_alignStart="@+id/category_spinner_text_view"
+                android:layout_alignLeft="@+id/category_spinner_text_view"
+                android:layout_marginTop="10dp"
+                android:text="Kategoria:"
+                android:textColor="#474747"
+                android:visibility="invisible"/>
+
+            <TextView
+                android:id="@+id/interval_spinner_text_view"
+                android:layout_width="175dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/interval_text_view"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/spinner_bg"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#474747"
+                android:textSize="20dp" />
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@+id/interval_spinner_text_view"
+                android:layout_alignStart="@+id/chip_group"
+                android:layout_alignLeft="@+id/chip_group"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_delete_button_bg"
+                    android:onClick="clickDeletePinButton"
+                    android:scaleType="center"
+                    android:text="Wyczyść"
+                    android:textColor="#474747"
+                    android:textSize="20sp"
+                    app:backgroundTint="#FD0000" />
+
+                <Button
+                    android:id="@+id/accept_button"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/custom_confirm_button_bg"
+                    android:onClick="archiveTarget"
+                    android:text="Zatwierdź"
+                    android:textColor="#474747"
+                    android:textSize="20sp"
+                    app:backgroundTint="#94E13A" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/category_spinner_text_view"
+                android:layout_width="175dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/interval_text_view"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/spinner_bg"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#474747"
+                android:textSize="20dp"
+                android:visibility="invisible"/>
+
+            <ScrollView
+                android:id="@+id/scroll_view_interval_multibox"
+                android:layout_width="160dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/interval_spinner_text_view"
+                android:layout_alignStart="@+id/interval_spinner_text_view"
+                android:layout_alignLeft="@+id/interval_spinner_text_view"
+                android:layout_alignEnd="@+id/interval_spinner_text_view"
+                android:layout_alignRight="@+id/interval_spinner_text_view"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/spinner_popup"
+                android:padding="10dp"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:id="@+id/container_interval_multibox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/scroll_view_category_multibox"
+                android:layout_width="160dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/interval_spinner_text_view"
+                android:layout_alignStart="@+id/category_spinner_text_view"
+                android:layout_alignLeft="@+id/category_spinner_text_view"
+                android:layout_alignEnd="@+id/category_spinner_text_view"
+                android:layout_alignRight="@+id/category_spinner_text_view"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/spinner_popup"
+                android:padding="10dp"
+                android:visibility="invisible">
+
+                <LinearLayout
+                    android:id="@+id/container_category_multibox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Tło -->
+    <item>
+        <shape>
+            <corners android:radius="8dp" /> <!-- Zaokrąglone rogi -->
+            <solid android:color="#CCCCCC" /> <!-- Kolor tła -->
+        </shape>
+    </item>
+    <!-- Postęp -->
+    <item android:id="@android:id/progress">
+        <clip android:clipOrientation="vertical" android:gravity="bottom">
+            <shape>
+                <corners android:radius="8dp" /> <!-- Zaokrąglone rogi -->
+                <gradient
+                    android:angle="270"
+                android:startColor="#6DE739"
+                android:endColor="#006400"
+                />
+            </shape>
+        </clip>
+    </item>
+</layer-list>
